@@ -6,12 +6,13 @@ import javax.faces.bean.*;
 
 import java.util.Scanner;
 
+/**
+*
+* @author DanielVaron-SebastianVillamarin
+*/
 
 @ManagedBean(name = "calculadoraBean") 
-/**
- *
- * @author DanielVaron-SebastianVillamarin
- */
+
 @ApplicationScoped
 //@SessionScoped
 public class calculadoraBean {
