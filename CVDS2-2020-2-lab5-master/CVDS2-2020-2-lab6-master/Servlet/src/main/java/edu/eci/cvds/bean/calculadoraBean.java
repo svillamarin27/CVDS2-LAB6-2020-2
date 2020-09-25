@@ -78,13 +78,14 @@ public class calculadoraBean {
 				if(datos.get(i)==datos.get(j)) {
 					vecesQueSeRepite++;
 				}
-			}if(vecesQueSeRepite > maximaVecesQueSeRepite) {
-				valModa = datos.get(i);  //valor moda
-				maximaVecesQueSeRepite = vecesQueSeRepite;
+				if(vecesQueSeRepite > maximaVecesQueSeRepite) {
+					valModa = datos.get(i);  //valor moda
+					maximaVecesQueSeRepite = vecesQueSeRepite;
 
-			}
-			moda=valModa;
+				}
+			}	
 		}
+		moda=valModa;
 		return moda;
 	}
 	public void reiniciar() {
