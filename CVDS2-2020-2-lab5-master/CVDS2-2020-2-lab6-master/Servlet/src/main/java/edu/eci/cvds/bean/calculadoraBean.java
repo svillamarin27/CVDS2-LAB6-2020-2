@@ -8,18 +8,19 @@ import javax.faces.bean.*;
 * @author DanielVaron-SebastianVillamarin
 */
 
-@ManagedBean(name = "calculadoraBean") 
+@ManagedBean(name = "calculadora") 
 
 @ApplicationScoped
 //@SessionScoped
 public class calculadoraBean {
 	private ArrayList<Double> datos=new ArrayList<Double>();
 	private double promedio;
-	private int indice;
-	private double valorModa;
+	private double moda;
+	private double desviacion;
+	private double varianza;
 	
 	public calculadoraBean(){
-		valorModa=0;
+		reiniciar();
 	}
 	
 	public void addDato(String dato) {
@@ -30,9 +31,13 @@ public class calculadoraBean {
 			datos.add(bucle);
 		}
 		calculateMean();
+		calculateStandardDeviation();
+		calculateVariance();
+		calculateMode();
 	}
 	
 	public double calculateMean() {
+		promedio=0;
 		//int[] valoresPromedio = int[] promedio;
 		for(int i=0; i<datos.size();i++) {
 			promedio+=datos.get(i);
@@ -41,9 +46,9 @@ public class calculadoraBean {
 		return promedio;
 	}
 	public double calculateStandardDeviation() {
+		desviacion=0;
 		double prome, sum = 0;
 		int n = datos.size();
-		double desviacion;
 		prome = calculateMean();
 		for(int i=0; i<datos.size();i++) {
 			sum += Math.pow (datos.get(i)- prome, 2 );
@@ -53,16 +58,18 @@ public class calculadoraBean {
 	}
 	
 	public double calculateVariance() {
+		varianza=0;
 		double acMedia = 0, acMedia2 = 0;
 		for(int i=0; i<datos.size();i++) {
 			acMedia = acMedia + datos.get(i) ;
 			acMedia2 = acMedia2 + datos.get(i) * datos.get(i);
 			
 		}
-		double valorVarianza = acMedia2 / (datos.size()-1) - (acMedia * acMedia)/ (datos.size()*(datos.size()-1));
-		return valorVarianza;
+		varianza = acMedia2 / (datos.size()-1) - (acMedia * acMedia)/ (datos.size()*(datos.size()-1));
+		return varianza;
 	}
 	public double calculateMode() {
+		moda=0;
 		int maximaVecesQueSeRepite = 0;
 		double valModa=0;
 		for(int i=0;i<datos.size();i++) {
@@ -76,31 +83,16 @@ public class calculadoraBean {
 				maximaVecesQueSeRepite = vecesQueSeRepite;
 
 			}
-			valorModa=valModa;
+			moda=valModa;
 		}
-		return valorModa;
+		return moda;
 	}
 	public void reiniciar() {
 		datos.clear();
 		promedio=0;
-		valorModa=0;
-	}
-	
-	public void menu() {
-		//indice = reader.nextInt();
-		if(indice==1) {
-			calculateMean();
-		}else if(indice == 2) {
-			calculateStandardDeviation();
-		}else if(indice ==3) {
-			calculateVariance();
-			
-		}else if(indice==4) {
-			calculateMode();
-		}else {
-			menu();
-		}
-		
+		moda=0;
+		desviacion=0;
+		varianza=0;
 	}
 	public double getPromedio() {
 		return promedio;
@@ -108,7 +100,13 @@ public class calculadoraBean {
 	public ArrayList<Double> getDatos(){
 		return datos;
 	}
-	public double getmoda(){
-		return valorModa;
+	public double getModa(){
+		return moda;
+	}
+	public double getDesviacion(){
+		return desviacion;
+	}
+	public double getVarianza(){
+		return varianza;
 	}
 }

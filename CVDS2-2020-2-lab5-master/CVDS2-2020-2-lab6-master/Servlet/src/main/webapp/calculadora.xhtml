@@ -8,12 +8,17 @@ xmlns:p="http://primefaces.org/ui">
             <p:panelGrid columns="2">
             	<h:outputText value="Numero"/>
                 <p:inputText binding="#{input}" required="true"></p:inputText>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.addDato(input.value)}" value="Aceptar"></p:commandButton>
-				<p:outputLabel value="Datos: #{calculadoraBean.datos}"></p:outputLabel>
-				<br>Promedio: <p:outputLabel value="#{calculadoraBean.promedio}"/></br>
-				<h:outputText value="Promedio: #{calculadoraBean.promedio}"/>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.reiniciar()}" value="Reiniciar"></p:commandButton>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.menu()}" value="Menu"></p:commandButton>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
+				<p:outputLabel value="Datos: #{calculadora.datos}"></p:outputLabel>
+				<h:outputText value="Promedio:"/>
+				<h:outputText value="#{calculadora.promedio}"/>
+				<h:outputText value="Moda:"/>
+				<h:outputText value="#{calculadora.moda}"/>
+				<h:outputText value="Varianza:"/>
+				<h:outputText value="#{calculadora.varianza}"/>
+				<h:outputText value="Desviacion Estandar:"/>
+				<h:outputText value="#{calculadora.desviacion}"/>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
             </p:panelGrid>
         </h:form>
 	
