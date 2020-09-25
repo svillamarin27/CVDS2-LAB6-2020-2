@@ -6,15 +6,15 @@ xmlns:p="http://primefaces.org/ui">
     <h:body>
         <h:form id="calculadora_form">
             <p:panelGrid columns="2">
-				<p:outputLabel value="valormoda: #{calculadoraBean.calculateMode}"></p:outputLabel>
-                <p:inputText id="numero" binding="#{numero}"></p:inputText>
-				<p:outputLabel value="datos: #{calculadoraBean.datos}"></p:outputLabel>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.restart(numero.value)}" value="Iniciar"></p:commandButton>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.menu}" value="Menu"></p:commandButton>
-
-
+            	<h:outputText value="Numero"/>
+                <p:inputText binding="#{input}" required="true"></p:inputText>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.addDato(input.value)}" value="Aceptar"></p:commandButton>
+				<p:outputLabel value="Datos: #{calculadoraBean.datos}"></p:outputLabel>
+				<br>Promedio: <p:outputLabel value="#{calculadoraBean.promedio}"/></br>
+				<h:outputText value="Promedio: #{calculadoraBean.promedio}"/>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.reiniciar()}" value="Reiniciar"></p:commandButton>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadoraBean.menu()}" value="Menu"></p:commandButton>
             </p:panelGrid>
-
         </h:form>
 	
     </h:body>
