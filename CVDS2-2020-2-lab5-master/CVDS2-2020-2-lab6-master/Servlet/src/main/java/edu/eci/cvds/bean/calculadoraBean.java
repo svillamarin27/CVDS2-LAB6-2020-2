@@ -68,26 +68,23 @@ public class calculadoraBean {
 		varianza = acMedia2 / (datos.size()-1) - (acMedia * acMedia)/ (datos.size()*(datos.size()-1));
 		return varianza;
 	}
+	
 	public double calculateMode() {
 		moda=0;
-		int maximaVecesQueSeRepite = 0;
-		double valModa=0;
+		int maxCount = 0;
 		for(int i=0;i<datos.size();i++) {
-			int vecesQueSeRepite = 0;
+			int count = 0;
 			for(int j=0;j<datos.size();j++) {
-				if(datos.get(i)==datos.get(j)) {
-					vecesQueSeRepite++;
-				}
-				if(vecesQueSeRepite > maximaVecesQueSeRepite) {
-					valModa = datos.get(i);  //valor moda
-					maximaVecesQueSeRepite = vecesQueSeRepite;
-
-				}
-			}	
+				if(datos.get(i)==datos.get(j)) count++;
+			}
+			if(count > maxCount) {
+				maxCount = count;
+				moda = datos.get(i);  //valor moda
+			}
 		}
-		moda=valModa;
 		return moda;
 	}
+	
 	public void reiniciar() {
 		datos.clear();
 		promedio=0;

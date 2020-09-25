@@ -7,7 +7,7 @@ xmlns:p="http://primefaces.org/ui">
         <h:form id="calculadora_form">
             <p:panelGrid columns="2">
             	<h:outputText value="Numero"/>
-                <p:inputText binding="#{input}" required="true"></p:inputText>
+                <p:inputText binding="#{input}"></p:inputText>
                 <p:commandButton update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
 				<p:outputLabel value="Datos: #{calculadora.datos}"></p:outputLabel>
 				<h:outputText value="Promedio:"/>
