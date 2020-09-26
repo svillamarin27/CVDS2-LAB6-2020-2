@@ -1,0 +1,10 @@
+body{
+    background-color: lightblue;
+}
+
+#guess_form{
+  width: 100%;
+  padding: 20% 10%;
+  margin: 2% 0;
+  box-sizing: border-box;
+} 
