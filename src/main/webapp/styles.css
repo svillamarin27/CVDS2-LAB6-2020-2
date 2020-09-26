@@ -1,10 +1,31 @@
-body{
-    background-color: lightblue;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i|Poppins:300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Forum');
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i|Marcellus|Nanum+Myeongjo:400,700,800|Old+Standard+TT:400,400i,700|Prata|Vidaloka');
+
+body {
+   background: #CD4F3D;
+   margin:0;
+
+}
+
+h1{
+    text-align: center;
+    font: oblique bold 200% cursive;
+    color:white;
 }
 
 #guess_form{
-  width: 100%;
-  padding: 20% 10%;
-  margin: 2% 0;
-  box-sizing: border-box;
+ background: #2bb24c;
+    font-family: 'Gothic A1', serif;
+    padding: 2% 40%;
+    text-align: center;
+
+}
+
+#datos{
+
+}
+
+#label{
 } 
