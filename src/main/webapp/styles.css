@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i|Marcellus|Nanum+Myeongjo:400,700,800|Old+Standard+TT:400,400i,700|Prata|Vidaloka');
 
 body {
-   background: #ff0000;
+   background: #ed1c1c;
    margin:0;
 
 }
@@ -22,7 +22,7 @@ h3{
 }
 
 #calculadora_form{
- background: #ff7b00;
+ background: #4895fa;
     font-family: 'Gothic A1', serif;
     padding: 2% 40%;
     text-align: center;
