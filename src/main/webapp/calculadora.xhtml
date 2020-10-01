@@ -8,13 +8,18 @@ xmlns:p="http://primefaces.org/ui">
     </h:head>
     <h:body>
 		<h1>Bienvenido a la calculadora!!</h1>
-		<h3>En esta calculadora vas a ingresar datos y se te va a generar el promedio, moda, varianza y desviación estandar de estos</h3>
+		<h3>En esta calculadora vas a ingresar datos y se te va a generar</h3>
+		<h3>promedio, moda, varianza y desviación estandar de estos</h3>
         <h:form id="calculadora_form">
             <p:panelGrid columns="2">
             	<h:outputText value="Numero"/>
                 <p:inputText binding="#{input}"></p:inputText>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
-				<p:outputLabel value="Datos: #{calculadora.datos}"></p:outputLabel>
+            </p:panelGrid>
+        </h:form>
+		<p:commandButton id="boton" update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
+		<p:outputLabel id="datos" value="Datos: #{calculadora.datos}"></p:outputLabel>
+		<h:form id="calculadora_form">
+            <p:panelGrid columns="2">
 				<h:outputText value="Promedio:"/>
 				<h:outputText value="#{calculadora.promedio}"/>
 				<h:outputText value="Moda:"/>
@@ -23,9 +28,8 @@ xmlns:p="http://primefaces.org/ui">
 				<h:outputText value="#{calculadora.varianza}"/>
 				<h:outputText value="Desviacion Estandar:"/>
 				<h:outputText value="#{calculadora.desviacion}"/>
-                <p:commandButton update="calculadora_form" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
-            </p:panelGrid>
+			</p:panelGrid>
         </h:form>
-	
+		<p:commandButton update="calculadora_form" id="boton" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
     </h:body>
 </html> 
