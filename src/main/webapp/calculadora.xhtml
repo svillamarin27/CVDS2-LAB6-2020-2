@@ -16,9 +16,9 @@ xmlns:p="http://primefaces.org/ui">
                 <p:inputText binding="#{input}"></p:inputText>
             </p:panelGrid>
         </h:form>
-		<p:commandButton id="boton" update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
+		<p:commandButton id="boton" update="calculadora_form" update="resultados" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
 		<p:outputLabel id="datos" value="Datos: #{calculadora.datos}"></p:outputLabel>
-		<h:form id="calculadora_form">
+		<h:form id="resultados">
             <p:panelGrid columns="2">
 				<h:outputText value="Promedio:"/>
 				<h:outputText value="#{calculadora.promedio}"/>
@@ -30,6 +30,6 @@ xmlns:p="http://primefaces.org/ui">
 				<h:outputText value="#{calculadora.desviacion}"/>
 			</p:panelGrid>
         </h:form>
-		<p:commandButton update="calculadora_form" id="boton" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
+		<p:commandButton update="calculadora_form" update="resultados" id="boton" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
     </h:body>
 </html> 

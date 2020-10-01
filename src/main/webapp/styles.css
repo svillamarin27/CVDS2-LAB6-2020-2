@@ -29,6 +29,14 @@ h3{
 
 }
 
+#resultados{
+ background: #2bb24c;
+    font-family: 'Gothic A1', serif;
+    padding: 2% 40%;
+    text-align: center;
+
+}
+
 #datos{
 	font-family: 'Gothic A1', serif;
 	text-align: center;
