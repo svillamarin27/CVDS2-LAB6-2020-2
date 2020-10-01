@@ -14,12 +14,8 @@ xmlns:p="http://primefaces.org/ui">
             <p:panelGrid columns="2">
             	<h:outputText value="Numero"/>
                 <p:inputText binding="#{input}"></p:inputText>
-            </p:panelGrid>
-        </h:form>
-		<p:commandButton id="boton" update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"><a update="resultados"/></p:commandButton>
-		<p:outputLabel id="datos" value="Datos: #{calculadora.datos}"></p:outputLabel>
-		<h:form id="resultados">
-            <p:panelGrid columns="2">
+                <p:commandButton update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
+				<p:outputLabel value="Datos: #{calculadora.datos}"></p:outputLabel>
 				<h:outputText value="Promedio:"/>
 				<h:outputText value="#{calculadora.promedio}"/>
 				<h:outputText value="Moda:"/>
@@ -28,8 +24,9 @@ xmlns:p="http://primefaces.org/ui">
 				<h:outputText value="#{calculadora.varianza}"/>
 				<h:outputText value="Desviacion Estandar:"/>
 				<h:outputText value="#{calculadora.desviacion}"/>
-			</p:panelGrid>
+                <p:commandButton update="calculadora_form" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"></p:commandButton>
+            </p:panelGrid>
         </h:form>
-		<p:commandButton update="calculadora_form" id="boton" actionListener="#{calculadora.reiniciar()}" value="Reiniciar"><a update="resultados"/></p:commandButton>
+	
     </h:body>
 </html> 
