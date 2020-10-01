@@ -3,7 +3,6 @@
 xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
     </h:head>
     <h:body>
         <h:form id="calculadora_form">
