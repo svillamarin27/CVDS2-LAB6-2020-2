@@ -17,7 +17,7 @@ xmlns:p="http://primefaces.org/ui">
                 
             </p:panelGrid>
 			<p:commandButton update="calculadora_form" actionListener="#{calculadora.addDato(input.value)}" value="Ingresar"></p:commandButton>
-			<h3:outputLabel value="Datos: #{calculadora.datos}"></h3:outputLabel>
+			<h3><p:outputLabel value="Datos: #{calculadora.datos}"></p:outputLabel></h3>
 			<p:panelGrid columns="2">
 				<h:outputText value="Promedio:"/>
 				<h:outputText value="#{calculadora.promedio}"/>
